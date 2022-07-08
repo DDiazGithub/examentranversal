@@ -1,0 +1,129 @@
+/* Informacion general*/ 
+body{background-color: #607D8B ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    word-wrap: break-word;
+}
+/* Ids*/ 
+#textomedio {text-align: center;}
+#textoleft {text-align: left;}
+#map{height: 500px;
+    width: 100%;}
+/* Clases */ 
+.marcas{background-color: #CFD8DC ; 
+
+    margin-top: 1%;
+    margin-left: 10%; 
+    margin-right: 10%;
+    margin-bottom: 1%;
+    padding-left: 2%; 
+    padding-top: 1%; 
+    padding-bottom: 1%; 
+    padding-right: 2%;
+    opacity: 0.7;
+    border-radius: 250px;
+    
+
+}
+.boxinfo{ background-color: #FB6376; 
+    margin-left: 10%; 
+    margin-right: 10%;  
+    padding-left: 4%; 
+    padding-top: 2%; 
+    padding-bottom: 2%; 
+    padding-right: 4%;
+    border-radius: 10px;
+    margin-bottom: 1%;
+}
+.boxinfo .row{
+    margin-top: 1%; 
+    margin-bottom: 1%;
+ }
+.titulo{
+    border-radius: 10px;
+}
+
+.contenedor{ background-color: none;
+    text-align: center;
+    height: 20%; 
+    width: 80%; 
+    margin-left: 10%; 
+    margin-right: 10%;  
+}
+
+.CuadroDobleCentrado1{background-color: #FCB1A6;
+    width: 50%;
+    float: left;  
+    height: 100%; 
+    padding-top: 1%; 
+    padding-bottom: 1%; 
+    border-radius: 250px;
+
+}
+.CuadroDobleCentrado2{
+    background-color: #FFDCCC;
+    width: 50%;
+    height: 100%; 
+    padding-top: 1%;  
+    padding-bottom: 1%; 
+    float: right;
+    border-radius: 250px;
+}
+.imagenes{                    
+    width: 80%;
+    padding-left: 20%;
+    
+}
+.banner{
+    width: 70%;
+    padding-left: 20%;
+}
+.recomendacion{background-color: #EBE18D; 
+    width: 80%;
+    height: 20%; 
+    margin-left: 10%; 
+    margin-right: 10%;  
+    padding-left: 2%; 
+    padding-top: 2%; 
+    padding-bottom: 2%; 
+    padding-right: 1%;
+}
+.subtitulo{
+    padding-left: 10;
+}
+
+.contacto{
+    text-align: center;
+    background-color: #FB6376; 
+    width: 80%; 
+    margin-left: 10%; 
+    margin-right: 10%;  
+    padding-left: 4%; 
+    padding-bottom: 2%; 
+    padding-right: 4%;
+}
+.contacto1 { 
+    background-color: turquoise;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    border: 0.3cm; 
+    border-style: outset; 
+    border-color: aqua;
+    margin-right: 4%;
+    margin-left: 4%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.link{
+    color: brown;
+}
+.link:hover{  /* Permite cambiar el color del link al pasar el mouse por encima */ 
+    color: red;
+}
+.btn-primary{
+    color: #5D2A42;
+    background-color: darkgoldenrod;
+    border-color:red;
+}
+.contenedor2{ background-color: #EBE18D;
+}

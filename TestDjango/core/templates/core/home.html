@@ -1,0 +1,195 @@
+
+  {% extends 'core/base.html' %}
+
+  {% block contenido%}
+
+  <!-- Inicio marquee -->
+  <div class="marcas">
+    <marquee>
+      <b>Horario de atencion desde 7 AM hastas 11Pm en todas nuestras sucursales</b>
+    </marquee>
+  </div>
+  <!-- Inicio marquee -->
+
+  <!-- Inicio Quienes Somos Informacion general de la empresa-->
+  <div class="col">
+    <div class="boxinfo" id="AboutUs">
+
+      <div class="row titulo" id="textoleft">
+
+        <h2> Bienvenidos a <b>Peludos</b> web</h2>
+
+      </div>
+      <div class="row">
+        <a> Somos <b>Peludos</b> un grupo especializado en el trato de animales contando con servicios de veterinaria,
+          peluqueria y venta de productos para mascotas.</a>
+      </div>
+      <div class="row"><a>Algunos de nuestros servicios Son:</a></div>
+      <div class="row">
+        <ul class="">
+          <li class="">
+            <a> Consultas</a>
+          </li>
+        </ul>
+        <ul class="">
+          <li class="">
+            <a> Hospitalizacion</a>
+          </li>
+        </ul>
+        <ul class="">
+          <li class="">
+            <a> Cirugia</a>
+          </li>
+        </ul>
+        <ul class="">
+          <li class="">
+            <a> Peluqueria</a>
+          </li>
+        </ul>
+        <ul class="">
+          <li class="">
+            <a> Juguetes de mascotas</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <a>
+
+          Tambien ofrece servicios de peluqueria, y a pesar de solo llevar un mes en el mercado como empresa
+          nuestros veterinarios llevan años en el rubro, contando con un alto
+          profesionalismo para satisfacer todas las necesidades de sus animales trabajando durante años para
+          diferentes
+          orgranizaciones y fundaciones.
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!--Final Quienes Somos-->
+
+  <!--Inicio Veterinaria / Peluqueria  se utiliza un contenedor  en el cual se ubican otros dos contenedores, 
+    permitiendo asi que se mantengan juntos-->
+  <!--Final Quienes Somos
+  <div class="contenedor">
+    <div class="row vetpel">
+      <div class="col">
+        <div class="row prueba">
+          <h6> Veterinaria</h6>
+        </div>
+        <div class="row imagenes">
+          <a href="veterinaria.html"> <img src="imagenes/veterinaria2.jpg" width="100%" /> </a>
+          <a> este es un texto de ejemplo</a>
+        </div>
+      </div>
+      <div class="col">
+        <a>este es un texto de ejemplo</a>
+      </div>
+    </div>
+  </div>
+  Final Quienes Somos-->
+
+
+  <div class="contenedor" >
+
+    <div class="CuadroDobleCentrado1" style="margin-top: 50px;">
+
+      <a class="link link:hover" href="veterinaria.html">
+        <h2>Veterinaria</h2>
+      </a>
+      {% load static %}
+      <div class="imagenes">
+
+        <a href="veterinaria.html"> <img src="{% static 'core/img/veterinaria2.jpg'%}" width="100%" /> </a>
+
+
+      </div>
+
+    </div>
+
+    <div class="CuadroDobleCentrado2" style="margin-top: 50px;" >
+
+      <a class="link link:hover" href="peluqueria.html">
+        <h2>Peluqueria</h2>
+      </a>
+      {% load static %}
+      <div class="imagenes">
+
+        <a href="peluqueria.html"> <img src="{% static 'core/img/peluqueria2.jpg'%}" width="100%" /> </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!--Final Veterinaria / Peluqueria -->
+
+  <!--Inicio Hospitalizacion-Cirugia-peluqueria  Se utiliza el sistema de rejillas de boostrap para tener multiples
+  contenedores ordenados y responsivos al cambio de resolucion-->
+  <div class="contacto">
+    <div class="row">
+      <div class="col-md-3 contacto1">
+        <!--Inicio Hospitalizacion-->
+        <h3>Hospitalizacion</h3>
+        {% load static %}
+        <div id="textoleft">
+          <a> <img src="{% static 'core/img/hospital.jpg'%}"  width="100%" /> </a>
+          <a style="text-align: left;"> Poseemos camas especiales para a cada animal segun sus necesidades</a>
+        </div>
+      </div>
+      <!--Fin Hospitalizacion-->
+
+      <div class="col-md-3 contacto1">
+        <!--Inicio Cirugia-->
+        <h3>Cirugias</h3>
+        {% load static %}
+        <div id="textoleft">
+          <a> <img src="{% static 'core/img/cirugia.jpg'%}"  width="100%" /> </a>
+          <a style="text-align: left;"> Contamos con tecnologia de ultima generacion y a profesionales capacitados para
+            realizar todo tipo de cirugias</a>
+        </div>
+      </div>
+      <!--Fin Cirugia-->
+
+      <div class="col-md-3 contacto1">
+        <!--Inicio Peluqueria-->
+        <h3>Peluqueria</h3>
+        {% load static %}
+        <div id="textoleft">
+          <a> <img src="{% static 'core/img/peluqueria.jpg'%}" width="100%" /> </a>
+          <a style="text-align: left;"> Para el mejor estilo de tu mascota, contamos con una peluqueria de mascotas</a>
+        </div>
+      </div>
+      <!--Fin Peluqueria-->
+    </div>
+  </div>
+  <!--Fin Hospitalizacion-Cirugia-peluqueria -->
+  <div class="container text-center py-5 text-white">
+    <h1>Ven a conocernos</h1>
+    <div class="row">
+      <div class="col-md-12 py-5">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3332.2986743052443!2d-70.68019498484696!3d-33.36326768079899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c7025c925e0f%3A0x7f2f6a657c08d14a!2sDuoc%20UC%3A%20Sede%20Plaza%20Norte!5e0!3m2!1ses!2scl!4v1651865318520!5m2!1ses!2scl"
+          width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p class="infocontacto">Nuestro horario de atencion es entre las 7:00 a 14:00 horas.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!--API DE Discord -->
+  <div class="container text-center text-white py-5">
+    <div class="row">
+      <div class="col-sm-12" id="aves"></div>
+    </div>
+  </div>
+
+  <div class="container text-center py-5">
+    <div class="row">
+      <iframe src="https://discord.com/widget?id=879535154262065243&theme=dark" width="350" height="500"
+        allowtransparency="true" frameborder="0"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    </div>
+  </div>
+
+  {% endblock%}
