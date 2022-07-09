@@ -3,6 +3,23 @@
 
   {% block contenido%}
 
+
+  <div class="row">
+      <h1> listado de vehiculos</h1>
+  </div>
+  <div class="row">
+      <table border="1">
+          <tr><td>patente</td>
+          <td>marca</td>
+          <td>modelo</td></tr>
+          {% for ve in vehiculos%}
+          <tr><td>{{ve.patente}}</td>
+          <td>{{ve.marca}}</td>
+          <td>{{ve.modelo}}</td></tr>
+          {% endfor%}
+      </table>
+  </div>
+
   <!-- Inicio marquee -->
   <div class="marcas">
     <marquee>
