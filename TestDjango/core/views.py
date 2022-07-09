@@ -33,3 +33,5 @@ def veterinaria(request):
     return render (request, 'core/veterinaria.html')
 def tienda(request):
     return render (request, 'core/tienda.html')
+def registrarmascotas(request):
+    return render (request, 'core/registrarmascotas.html')
