@@ -21,3 +21,12 @@ class Vehiculo(models.Model):
 
     def __str__(self):
         return self.patente
+
+class Mascota(models.Model):
+    nombre = models.CharField(max_length=70, verbose_name='nombre mascota')
+    edad = models.IntegerField(verbose_name='edad mascota')
+    raza = models.CharField(max_length=70, verbose_name='raza mascota')
+    descripcion = models.TextField()
+    nacimiento = models.DateField()
+    def __str__(self):
+        return self.nombre
