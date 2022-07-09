@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Vehiculo
-from .forms import VehiculoForm, MascotaForm
+from .forms import VehiculoForm, MascotaForm #intento
 
 # Create your views here.
 
@@ -49,5 +49,10 @@ def registrarmascotas(request):
 
 def listar_mascotas(request):
 
+   # intento= Intento.objects.all()
+    #data ={
+   #     'intento': intento
+   # }
 
-    return render(request, 'core/listar_mascotas.html')
+
+    return render(request, 'core/listar_mascotas.html', data)
