@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Vehiculo
+from .forms import VehiculoForm, MascotaForm
 
 # Create your views here.
 
@@ -34,4 +35,14 @@ def veterinaria(request):
 def tienda(request):
     return render (request, 'core/tienda.html')
 def registrarmascotas(request):
-    return render (request, 'core/registrarmascotas.html')
+    data = {
+        'form': MascotaForm()
+    }
+    if request.method == 'POST':
+        formulario = MascotaForm(data=request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "mascota guardada"
+        else:
+            data["form"] = formulario
+    return render (request, 'core/registrarmascotas.html',data)
