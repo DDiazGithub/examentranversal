@@ -46,3 +46,8 @@ def registrarmascotas(request):
         else:
             data["form"] = formulario
     return render (request, 'core/registrarmascotas.html',data)
+
+def listar_mascotas(request):
+
+
+    return render(request, 'core/listar_mascotas.html')
