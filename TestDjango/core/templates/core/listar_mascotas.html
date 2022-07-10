@@ -2,21 +2,24 @@
 
 {% block contenido%}
 
-<table>
-    <tr>
-        <th>nombre</th>
-        <th>edad</th>
-        <th>raza</th>
-        <th>descripcion</th>
-        <th>nacimiento</th>
-    </tr>
-    {%for p in listar%}
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    {%endfor%}
-</table>
+<div class="row">
+    <h1> listado de mascotas</h1>
+  </div>
+  <div class="row">
+      <table border="1">
+        <tr><td>nombre</td>
+        <td>edad</td>
+        <td>raza</td>
+        <td>descripcion</td>
+        <td>nacimiento</td></tr>
+        {% for ve in mascotas%}
+        <tr><td>{{ve.nombre}}</td>
+        <td>{{ve.edad}}</td>
+        <td>{{ve.raza}}</td>
+        <td>{{ve.descripcion}}</td>
+        <td>{{ve.nacimiento}}</td></tr>
+        {% endfor%}
+      </table>  
+  </div> 
 
 {% endblock%}

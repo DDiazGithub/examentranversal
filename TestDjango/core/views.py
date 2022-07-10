@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Vehiculo
+from .models import Vehiculo, Mascota
 from .forms import VehiculoForm, MascotaForm #intento
 
 # Create your views here.
@@ -11,7 +11,12 @@ def home(request):
     # ahoras crearemos una variable que le pase los datos del vehiculo a la template
     datos = {
         'vehiculos': vehiculos
-    }
+    }                 
+   #mascotas= Mascota.objects.all()
+
+   # datos = {
+   #     'mascotas': mascotas
+   # }
 
     return render(request, 'core/home.html', datos)
 
@@ -49,10 +54,11 @@ def registrarmascotas(request):
 
 def listar_mascotas(request):
 
-   # intento= Intento.objects.all()
-    #data ={
-   #     'intento': intento
-   # }
+    mascotas= Mascota.objects.all()
+
+    data = {
+        'mascotas': mascotas
+    }
 
 
     return render(request, 'core/listar_mascotas.html', data)
