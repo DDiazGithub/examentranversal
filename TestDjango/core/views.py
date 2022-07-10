@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Vehiculo, Mascota
 from .forms import VehiculoForm, MascotaForm #intento
 
@@ -62,3 +62,26 @@ def listar_mascotas(request):
 
 
     return render(request, 'core/listar_mascotas.html', data)
+
+def modificarmascotas(request, id):
+
+    mascota = get_object_or_404(Mascota, id=id)
+
+    data = {
+        'form': MascotaForm(instance=mascota)
+    }
+
+    if request.method == 'POST':
+        formulario = MascotaForm(data=request.POST, instance=mascota)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(to="listar_mascotas")
+        data ["form"] = formulario
+
+
+    return render(request, 'core/modificarmascotas.html',data)
+
+def eliminarmascotas(request, id):
+    mascota = get_object_or_404(Mascota, id=id)
+    mascota.delete()
+    return redirect(to="listar_mascotas")
