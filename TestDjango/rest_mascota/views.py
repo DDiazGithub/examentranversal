@@ -24,3 +24,27 @@ def api_mascotas(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+@api_view(['GET','PUT','DELETE'])
+def info_mascotas(request, id):
+    """
+    get update delete de una mascota
+    """
+    try:
+        mascota = Mascota.objects.get (nombre=id)
+    except Mascota.DoesNotExist:
+        return Response (status=status.HTTP_404_NOT_FOUND)
+    if request.method =='GET':
+        serializer = MascotaSerializer(mascota)
+        return Response(serializer.data)
+    if request.method == 'PUT':
+        data = JSONParser().parse(request)
+        serializer = MascotaSerializer(mascota, data=data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        mascota.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+        
