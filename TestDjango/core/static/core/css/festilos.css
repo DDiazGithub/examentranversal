@@ -1,0 +1,16 @@
+
+body{
+  background-image: url("static/img/fregistro.jpg");
+}
+.col{
+  padding: 100px;
+  margin: 1px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.btn{
+  justify-items: center;
+}
+#error{
+  margin-top: 20px;
+}

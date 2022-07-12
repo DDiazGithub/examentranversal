@@ -1,0 +1,87 @@
+
+{% extends 'core/base.html' %}
+{% block css %}
+{% load static %}
+<link href="{% static 'core/css/festilos.css'%}" rel="stylesheet" type="text/css">
+
+
+{% endblock %}
+{% block script %}
+    <!-- validacion de formulario y modificacion de contenido de la pagina sin recargarla con lenguaje de programacion -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("error").hide();
+            $("#formulario").submit(function () {
+                var mensaje = "";
+                if ($("#edad").val().trim().length == 0) {
+                    mensaje = "la edad esta en blanco";
+                }
+                if ($("#email").val().trim().length == 0) {
+                    mensaje = "El email esta en blanco";
+                }   
+                if ($("#nombre").val().trim().length == 0) {
+                    mensaje = "El nombre esta en blanco";
+                }
+
+                if (mensaje != "") {
+                    $("#error").html(mensaje);
+                    $("#error").show();
+                    event.preventDefault();
+                }
+                if (mensaje == "") {
+                    alert("se han enviado correctamente los datos");
+                }
+
+            });
+        })
+    </script>
+{% endblock %}
+{% block contenido%}
+
+    <section class="form-register">
+        <div class="container">
+            <form method="post" action="" id="formulario" autocomplete="on">
+                <!--  autocompletado -->
+                <div class="row">
+                    <!--  Diferentes formularios -->
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="nombre">Nombre de la mascota:</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" autofocus required
+                                pattern="[A-Za-z0-9]+"><!-- control de formulario -->
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electronico:</label>
+                            <input type="email" class="form-control" id="email" name="email">
+                        </div>
+                        <input type="submit" class="btn btn-danger" id="enviar" value="Enviar"
+                            style="text-align: center;">
+                        <input type="reset" class="btn btn-danger" id="limpiar" value="limpiar">
+                        <div id="error" class="alert alert-danger" role="alert"></div>
+
+                    </div>
+                    <div class="col">
+                        <div class="form-group datalist-wrap">
+                            <!--  Sugerencias -->
+                            <label class="label">Color del pelaje del animal<small> (Opcional)</small> </label>
+                            <input type="text" list="color" class="form-control" maxlength="40" />
+                            <datalist id="color">
+                                <option value="Gris"></option>
+                                <option value="Blanco"></option>
+                                <option value="Negro"></option>
+                                <option value="Cafe"></option>
+                                <option value="beach"></option>
+                                <option value="naranjo"></option>
+                                <option value="No posee pelaje"></option>
+                            </datalist>
+                        </div>
+                        <div class="form-group">
+                            <label for="edad">Edad:</label>
+                            <input type="number" class="form-control" id="edad" name="edad" min="1" max="999">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock%}
